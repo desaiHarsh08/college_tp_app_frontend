@@ -1,23 +1,23 @@
 import { NavLink, useNavigate } from 'react-router-dom'
-import React, { useContext, useEffect } from 'react'
-import recordContext from '../context/records/recordContext'
+import React, { useEffect } from 'react'
+// import recordContext from '../context/records/recordContext'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import SettingsIcon from '@mui/icons-material/Settings';
-import PersonIcon from '@mui/icons-material/Person';
+// import PersonIcon from '@mui/icons-material/Person';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import CloseIcon from '@mui/icons-material/Close';
 
 const LoggedInNavbar = () => {
 
   // const uContext = useContext(userContext);
-  const rContext = useContext(recordContext);
+  // const rContext = useContext(recordContext);
   // const { user, setUser } = uContext;
-  const { getRecords } = rContext;
+  // const { getRecords } = rContext;
 
-  const { records, setRecords } = rContext;
+  // const { records, setRecords } = rContext;
 
   useEffect(() => {
-    const authToken = localStorage.token;
+    // const authToken = localStorage.token;
     const userImg = localStorage.userImg;
 
     if (userImg === undefined) {

@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
 import hiGif from '../assets/hiGif.gif'
 
 const UserSettings = () => {
 
-  let navigate = useNavigate();
 
 
   return (

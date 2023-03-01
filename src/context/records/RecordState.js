@@ -42,6 +42,7 @@ const RecordState = (props)=>{
         });
         const json = await res.json();
         // console.log("from update", json)
+        setRecords(json);
     }
 
     

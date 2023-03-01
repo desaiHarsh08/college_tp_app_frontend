@@ -16,7 +16,9 @@ import Preferences from "./components/Preferences";
 import UserSettings from "./components/UserSettings";
 import AdminHome from "./components/AdminHome";
 import CompanyState from "./context/companies/CompanyState";
+// import dotenv from 'dotenv';
 
+// dotenv.config({ path: './config.env'});
 
 function App() {
 

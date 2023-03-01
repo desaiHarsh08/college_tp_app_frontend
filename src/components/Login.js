@@ -5,9 +5,10 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 const Login = () => {
-
+    // const { loginWithRedirect } = useAuth0();
     // const login = useGoogleLogin({
     //     // onSuccess: tokenResponse => // console.log(tokenResponse),
     //     onSuccess: async response => {
@@ -152,6 +153,7 @@ const Login = () => {
                             <p className='text-center my-3'>Or continue with</p>
                             <ul className='flex justify-center items-center flex-col space-x-7'>
                                 <li data-ux_mode="redirect">
+                                    
                                     <GoogleLogin 
                                         onSuccess={credentialResponse => {
                                             // // console.log("google:", credentialResponse.credential);

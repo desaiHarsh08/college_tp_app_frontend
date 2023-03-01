@@ -1,59 +1,30 @@
-import React, { useState, useContext, useEffect } from 'react'
-import userContext from '../context/myUsers/userContext';
+import React, { useContext } from 'react'
 import recordContext from '../context/records/recordContext'
-import jwt_decode from "jwt-decode";
-import { useNavigate } from 'react-router-dom';
+// import jwt_decode from "jwt-decode";
 
 const Preferences = () => {
 
-    let navigate = useNavigate();
-    const uContext = useContext(userContext);
     const rContext = useContext(recordContext);
-    const { getRecords } = rContext;
+    // const { getRecords } = rContext;
     const { editRecords } = rContext;
 
     const { records, setRecords } = rContext;
 
-    useEffect(() => {
-        getRecords()
-    }, [])
+    // useEffect(() => {
+    //     getRecords()
+    // }, [])
 
     // const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
 
 
     const handleOnChange = (e) => {
         setRecords({ ...records, [e.target.name]: e.target.value });
-        // // console.log('dept. **********************************************************', document.getElementById('department').value)
-
-
-
-
-
-
-
-        // setRecords({
-        //     name: document.getElementById('name').value,
-        //     email: document.getElementById('email').value,
-        //     dob: document.getElementById('dob').value,
-        //     phone: document.getElementById('phone').value,
-        //     state: document.getElementById('state').value,
-        //     homeTown: document.getElementById('homeTown').value,
-        //     address: document.getElementById('address').value,
-        //     tenth: document.getElementById('tenth').value,
-        //     twelfth: document.getElementById('twelfth').value,
-        //     course: document.getElementById('course').value,
-        //     department: document.getElementById('department').value,
-        //     aggregate: document.getElementById('aggregate').value,
-        //     // skills: document.getElementById('skills').value,
-        //     yearOfPassing: document.getElementById('yearOfPassing').value,
-        // })
-        // setOtpByUser(document.getElementById('otpnumber').value);
     }
 
     const handleSaveInfo = (e) => {
         e.preventDefault();
-        let token = localStorage.token;
-        let decoded = jwt_decode(token)
+        // let token = localStorage.token;
+        // let decoded = jwt_decode(token)
         // console.log(decoded.user.id)
 
         // { _id, name, email, address, phone, department, yearOfPassing, homeTown, state, tenth, twelfth, aggregate}

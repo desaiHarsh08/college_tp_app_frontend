@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import placementImage from '../assets/placementImage.jfif'
 import companyContext from '../context/companies/companyContext'
 import recordContext from '../context/records/recordContext'
@@ -8,18 +8,18 @@ const DashboardHome = () => {
 
   const cContext = useContext(companyContext);
   const { getCompany } = cContext;
-  const { company, setCompany } = cContext;
+  const { company } = cContext;
 
   const context = useContext(recordContext);
-  const { records, setRecords } = context;
-  const { getRecords } = context;
+  const { records } = context;
+  // const { getRecords } = context;
 
-  const [myCompany, setMyCompany] = useState({ companyName: "", jobRole: "", criteria: "", driveLink: "", aboutCompany: "" });
+  // const [myCompany, setMyCompany] = useState({ companyName: "", jobRole: "", criteria: "", driveLink: "", aboutCompany: "" });
 
   useEffect(() => {
-    setMyCompany(getCompany())
-    // console.log("here in mycompany", myCompany.companyName)
-    // console.log("here in useffect", company)
+    // setMyCompany(getCompany())
+    getCompany()
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -48,19 +48,19 @@ const DashboardHome = () => {
             <div className='apply-for-company flex flex-col gap-2'>
               <div><span className='text-xl font-medium'>Criteria: </span></div>
               <div>
-                <p><a href="" className='text-purple-700'>{company.criteria}</a></p>
+                <p><span className='text-purple-700'>{company.criteria}</span></p>
               </div>
             </div>
             <div className='apply-for-company flex flex-col gap-2'>
               <div><span className='text-xl font-medium'>Apply for Drive:</span></div>
               <div>
-                <p><a href="" className='text-purple-700'>{company.driveLink}</a></p>
+                <p><a href="/" className='text-purple-700'>{company.driveLink}</a></p>
               </div>
             </div>
             <div className='apply-for-company flex flex-col gap-2'>
               <div><span className='text-xl font-medium'>Last date to apply:</span></div>
               <div>
-                <p><a href="" className='text-purple-700'>Lorem ipsum dolor sit amet consectetur adipisicing.</a></p>
+                <p><span className='text-purple-700'>Lorem ipsum dolor sit amet consectetur adipisicing.</span></p>
               </div>
             </div>
           </div>

@@ -1,8 +1,8 @@
-import jwtDecode from 'jwt-decode';
-import React, { useContext, useEffect, useState } from 'react'
+// import jwtDecode from 'jwt-decode';
+import React, { useContext, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import recordContext from '../context/records/recordContext'
-import companyContext from '../context/companies/companyContext'
+// import companyContext from '../context/companies/companyContext'
 import HomeIcon from '@mui/icons-material/Home';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import RoomPreferencesIcon from '@mui/icons-material/RoomPreferences';
@@ -18,17 +18,18 @@ const Dashboard = () => {
     let location = useLocation();
 
     const context = useContext(recordContext);
-    const cContext = useContext(companyContext);
+    // const cContext = useContext(companyContext);
     const { records, setRecords } = context;
     const { getRecords } = context;
-    const { getCompany } = cContext;
+    // const { getCompany } = cContext;
 
-    const [myCompany, setMyCompany] = useState({companyName: "", jobRole: "", criteria: "", driveLink: "", aboutCompany: "" });
+    // const [myCompany, setMyCompany] = useState({companyName: "", jobRole: "", criteria: "", driveLink: "", aboutCompany: "" });
 
     useEffect(() => {
-        const authToken = localStorage.token;
+        
+        // const authToken = localStorage.token;
         const userImg = localStorage.userImg;
-        const decoded = jwtDecode(authToken);
+        // const decoded = jwtDecode(authToken);
         // console.log("decoded", decoded)
 
         
@@ -43,6 +44,7 @@ const Dashboard = () => {
         // setMyCompany(getCompany());
         // console.log("company", getCompany())
         setRecords(getRecords());
+        // eslint-disable-next-line
     }, [])
 
 

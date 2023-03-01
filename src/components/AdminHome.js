@@ -9,15 +9,15 @@ const AdminHome = () => {
     const { createCompany } = context;
 
     const rContext = useContext(recordContext);
-    const { records, setRecords } = rContext;
-    const { getRecords } = rContext;
+    // const { records, setRecords } = rContext;
+    // const { getRecords } = rContext;
     const { studentRecordsBySearch } = rContext;
 
-    const apiKey = '43dc9ad5f8f847a18898a6c1ea19ec0a';
-    const apiURL = 'https://emailvalidation.abstractapi.com/v1/?api_key=' + apiKey
+    // const apiKey = '43dc9ad5f8f847a18898a6c1ea19ec0a';
+    // const apiURL = 'https://emailvalidation.abstractapi.com/v1/?api_key=' + apiKey
 
     var arr = [];
-    var i = 0;
+    // var i = 0;
 
     const handleOnChange = (e) => {
         setCompany({ ...company, [e.target.name]: e.target.value });

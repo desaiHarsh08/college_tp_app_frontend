@@ -11,7 +11,7 @@ const Signup = () => {
 
 
   const context = useContext(userContext);
-  const { user, setUser } = context;
+  // const { user, setUser } = context;
   const { createUser } = context;
 
   const form = useRef();

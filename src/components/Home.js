@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import About from './About'
 import Contact from './Contact'
 import Navbar from './Navbar'
@@ -6,7 +6,6 @@ import Navbar from './Navbar'
 import homeGif from '../assets/homeGif.gif'
 import Services from './Services'
 import Footer from './Footer'
-import LoggedInNavbar from './LoggedInNavbar'
 
 const Home = () => {
   

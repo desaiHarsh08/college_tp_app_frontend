@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import About from './About'
 import Contact from './Contact'
 import homeGif from '../assets/homeGif.gif'
@@ -16,8 +16,10 @@ const LoggedInHome = () => {
     if(!localStorage.getItem('token')){
       navigate('/login');
     }  
+    // console.log('Welcome')
     
-  }, [])
+    // eslint-disable-next-line
+  }, [])// eslint-disable-next-line react-hooks/exhaustive-deps
   
   return (
     <div>
