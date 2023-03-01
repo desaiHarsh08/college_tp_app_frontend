@@ -33,12 +33,14 @@ const Login = () => {
 
     let navigate = useNavigate();
 
+    const host = "https://college-tp-app-backend.onrender.com";
+
     const [credentials, setCredentials] = useState({ email: "", password: "" })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(credentials)
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        console.log(credentials)
+        const response = await fetch(`${host}/api/auth/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -46,9 +48,10 @@ const Login = () => {
             body: JSON.stringify({ email: credentials.email, password: credentials.password })
         });
         const json = await response.json()
-        // console.log(json);
+        console.log(json);
         if (json.success) {
             // Save the authToken and redirect
+
             localStorage.setItem('token', json.authToken);
             localStorage.setItem('name', json.name);
             localStorage.setItem('email', json.email);
@@ -61,15 +64,15 @@ const Login = () => {
 
     }
 
-    const handleToken = async (credentialResponse)=> {
-        
+    const handleToken = async (credentialResponse) => {
+
         var token = (credentialResponse.credential);
         // console.log('credres', token)
         var decoded = jwt_decode(token);
         // console.log("decoded", decoded)
         // console.log(credentialResponse);
         // console.log(decoded.picture, decoded.email_verified);
-        const response = await fetch('http://localhost:5000/api/auth/login-using-auth-token', {
+        const response = await fetch(`${host}/api/auth/login-using-auth-token`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -113,7 +116,7 @@ const Login = () => {
                     <button type='submit' >Submit</button>
                 </div>
             </form> */}
-{/* <a href="https://storyset.com/user">User illustrations by Storyset</a> */}
+            {/* <a href="https://storyset.com/user">User illustrations by Storyset</a> */}
 
             <div className='login-container h-[100vh] flex flex-col md:flex-row'>
                 <div className="left py-7  w-full  md:w-1/3  flex flex-col items-center justify-center bg-[#f0f8ff]" >
@@ -153,8 +156,8 @@ const Login = () => {
                             <p className='text-center my-3'>Or continue with</p>
                             <ul className='flex justify-center items-center flex-col space-x-7'>
                                 <li data-ux_mode="redirect">
-                                    
-                                    {/* <GoogleLogin 
+
+                                    <GoogleLogin 
                                         onSuccess={credentialResponse => {
                                             // // console.log("google:", credentialResponse.credential);
                                             handleToken(credentialResponse);
@@ -163,8 +166,8 @@ const Login = () => {
                                         onError={() => {
                                             // // console.log('Login Failed');
                                         }}
-                                    /> */}
-                                
+                                    />
+
                                 </li>
                             </ul>
                         </div>
