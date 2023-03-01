@@ -154,7 +154,7 @@ const Login = () => {
                             <ul className='flex justify-center items-center flex-col space-x-7'>
                                 <li data-ux_mode="redirect">
                                     
-                                    <GoogleLogin 
+                                    {/* <GoogleLogin 
                                         onSuccess={credentialResponse => {
                                             // // console.log("google:", credentialResponse.credential);
                                             handleToken(credentialResponse);
@@ -163,7 +163,7 @@ const Login = () => {
                                         onError={() => {
                                             // // console.log('Login Failed');
                                         }}
-                                    />
+                                    /> */}
                                 
                                 </li>
                             </ul>

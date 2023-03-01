@@ -6,15 +6,15 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 // import dotenv from 'dotenv';
 
 // dotenv.config({ path: './config.env'});
-const id = process.env.CLIENT_ID;
-console.log(id)
+// const id = process.env.CLIENT_ID;
+// console.log(id)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={'150795452854-li1vf27cfncdbd07ac08jbagbrcl33d6.apps.googleusercontent.com'} >
-      <App />
-    </GoogleOAuthProvider>
-  </React.StrictMode>
+    <App />
+  </GoogleOAuthProvider>
+  </React.StrictMode >
 );
 
 // If you want to start measuring performance in your app, pass a function

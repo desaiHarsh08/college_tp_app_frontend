@@ -140,6 +140,7 @@ const LoggedInNavbar = () => {
                 <li><a href={'#about'}  >About</a></li>
                 <li><a href={'#services'}  >Services</a></li>
                 <li><a href={'#contact'}>Contact</a></li>
+                <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
               </ul>
             </div>
             <div className='border-b-2 border-b-blue-500 mb-10 py-2 '>
